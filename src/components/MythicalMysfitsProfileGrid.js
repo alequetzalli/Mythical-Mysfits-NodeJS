@@ -1,20 +1,12 @@
 import React, {Component} from 'react'
+import data from '../mythicalmysfitsdata'
 
 export class MythicalMysfitsProfileGrid extends Component {
     constructor (props){
 
         super(props); 
 
-        this.state = {
-            mysfits: [
-                {name:'Canela',
-                species: 'Dog',
-                age: '12',
-                goodevil: 'she-devil',
-                lawchaos: 'illegal alien',
-                thumbImageUri: 'https://www.okhumane.org/wp-content/uploads/2016/02/chocolate-lab.jpg'
-            }, ]
-        }; 
+        this.state = { mysfits: data};  
     }
 
     render (){
@@ -25,7 +17,7 @@ export class MythicalMysfitsProfileGrid extends Component {
                     {
                         this.state.mysfits.map(mysfit => {
                             return (
-                                <div>
+                                <div key={mysfit.mysfitId}>
                                 <p>
                                     <strong> {mysfit.name}</strong>
                                    
